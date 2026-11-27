@@ -21,7 +21,7 @@ Agent tidak boleh menganggap ini sudah final. Jika kamu perlu mengubahnya, beri 
 - Nama domain belum ditentukan. Usulan: `mrglobalevents.com` atau `mrglobal-events.id`. Jangan hardcode domain, pakai `APP_URL`.
 - Logo belum ada. Gunakan placeholder teks "MR Global Events & Solutions" sampai logo masuk ke `public/images/brand/`.
 - Email kontak `mrayaglobal@gmail.com` perlu dicek ejaannya ke klien.
-- Badan hukum: klien menulis belum punya, tetapi teks Tentang Kami menyebut PT Mitra Raya Global. Sampai dikonfirmasi, **jangan** menampilkan nama PT di footer, schema markup, atau dokumen legal.
+- Badan hukum: klien menulis belum punya, tetapi teks Tentang Kami menyebut Mitra Raya Global. Intro memakai "Mitra Raya Global Events & Solutions" tanpa "PT". Sampai dikonfirmasi, **jangan** menampilkan nama PT di footer, schema markup, atau dokumen legal.
 
 ## 3. Tech stack
 

@@ -107,10 +107,11 @@ return [
     ],
 
     'about' => [
-        // Frasa "di bawah naungan PT Mitra Raya Global" sengaja tidak ditampilkan
-        // sampai klien mengonfirmasi badan hukum (docs/CONTENT.md, catatan Tentang Kami).
+        // Intro memakai "Mitra Raya Global Events & Solutions" tanpa "PT".
+        // Frasa "di bawah naungan PT Mitra Raya Global" tidak dipakai sampai
+        // klien mengonfirmasi badan hukum (docs/CONTENT.md, catatan Tentang Kami).
         'intro' => [
-            'MR Global Events & Solutions hadir sebagai perusahaan event organizer (full-service) terpercaya yang siap menangani berbagai kebutuhan acara Anda: mulai dari corporate gathering, outbound, team building, hingga MICE berskala nasional.',
+            'Mitra Raya Global Events & Solutions hadir sebagai perusahaan event organizer (full-service) terpercaya yang siap menangani berbagai kebutuhan acara Anda: mulai dari corporate gathering, outbound, team building, hingga MICE berskala nasional.',
             'Kami percaya acara yang sukses tidak hanya diukur dari kemegahannya, tetapi juga dari kejujuran, transparansi, dan eksekusi yang bisa diandalkan. Lebih dari sekadar menyelenggarakan acara, kami berkomitmen menghadirkan pengalaman berkesan yang tertata, aman, dan sesuai tujuan Anda.',
         ],
     ],

@@ -35,7 +35,7 @@ Status: **belum dikirim ke klien.**
 |---|---|---|---|---|
 | A1 | Ejaan email resmi yang benar: `mrayaglobal@gmail.com` atau lainnya? | Email tampil di kontak, footer, dan halaman privasi. Ejaan salah membuat calon klien gagal menghubungi. | Alamat lengkap | Belum |
 | A2 | Nama domain final dan siapa yang memegang akses DNS? | Canonical, OG, sitemap, dan email bergantung pada domain. | Nama domain + pemilik akses | Belum |
-| A3 | Apakah badan hukum sudah ada? Nama resmi apa yang boleh ditampilkan? | Teks Tentang menyebut PT Mitra Raya Global, tetapi belum dikonfirmasi. Jangan tampilkan nama PT sebelum jelas. | Nama badan hukum / belum ada | Belum |
+| A3 | Apakah badan hukum sudah ada? Nama resmi apa yang boleh ditampilkan? | Teks Tentang menyebut Mitra Raya Global, tetapi belum dikonfirmasi. Jangan tampilkan nama PT sebelum jelas. | Nama badan hukum / belum ada | Belum |
 | A4 | Alamat lengkap basecamp (jalan, kelurahan, kota, kode pos)? | Untuk halaman kontak, footer, dan Google Business Profile. | Alamat lengkap | Belum |
 | A5 | Jam operasional dan hari kerja? | Untuk halaman kontak dan ekspektasi respons. | Hari + jam | Belum |
 | A6 | Nomor WhatsApp utama tetap `+62 8577-123-9861`? Apakah ada nomor cadangan? | Nomor ini dipakai di semua CTA. | Konfirmasi + nomor cadangan | Belum |

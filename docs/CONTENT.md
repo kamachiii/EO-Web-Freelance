@@ -10,15 +10,15 @@ Teks yang belum ada ditandai **[BELUM ADA]**. Untuk yang ini, sembunyikan sectio
 - **Headline beranda:** Push Your Limits, Build Your Team
 - **Sub-headline:** Mitra profesional terpercaya untuk penyelenggaraan Corporate Outbound, Team Building, Adventure Experience, & MICE yang energik dan berdampak nyata.
 - **CTA:** "Konsultasi Gratis Sekarang" (ke WhatsApp) dan "Lihat Program Kami" (ke daftar layanan)
-- **Badan hukum:** belum ada. Jangan menampilkan "PT Mitra Raya Global" di footer, schema, atau dokumen legal sebelum klien mengonfirmasi (lihat `AGENTS.md` bagian 2).
+- **Badan hukum:** belum dikonfirmasi klien. Intro Tentang Kami memakai "Mitra Raya Global Events & Solutions" tanpa "PT". Jangan menampilkan "PT Mitra Raya Global" di footer, schema, atau dokumen legal sebelum klien mengonfirmasi (lihat `AGENTS.md` bagian 2).
 
 ## Tentang Kami (judul: Siapa Kami?)
 
-MR Global Events & Solutions (di bawah naungan PT Mitra Raya Global) hadir sebagai perusahaan Event Organizer (full-service) terpercaya yang siap menangani berbagai kebutuhan acara Anda: mulai dari corporate gathering, outbound, team building, hingga MICE berskala nasional.
+Mitra Raya Global Events & Solutions hadir sebagai perusahaan event organizer (full-service) terpercaya yang siap menangani berbagai kebutuhan acara Anda: mulai dari corporate gathering, outbound, team building, hingga MICE berskala nasional.
 
 Kami percaya bahwa sebuah acara yang sukses tidak hanya diukur dari kemeriahannya di atas kertas, melainkan dari kejujuran, transparansi, dan eksekusi yang bisa diandalkan. Lebih dari sekadar menyelenggarakan acara, kami berkomitmen untuk menghadirkan pengalaman berkesan yang tertata, aman, dan sesuai tujuan Anda.
 
-> Catatan: kalimat "di bawah naungan PT Mitra Raya Global" menunggu konfirmasi klien. Sampai itu terjawab, tulis tanpa frasa tersebut.
+> Catatan: intro memakai "Mitra Raya Global Events & Solutions" tanpa "PT". Frasa "di bawah naungan PT Mitra Raya Global" tidak dipakai sampai klien mengonfirmasi badan hukum.
 
 ### Visi
 
