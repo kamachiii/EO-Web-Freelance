@@ -94,6 +94,8 @@ Jalankan `pint` dan `php artisan test` sebelum menyatakan pekerjaan selesai.
 | `/segmen/ramadan`, `/segmen/sekolah-universitas` | Halaman per segmen musiman |
 | Testimoni | Section di beranda dan halaman terkait (aktif setelah ada testimoni nyata) |
 
+Rancangan sorotan musim ada di `SEASONAL.md`. Ringkasnya: audiens (sekolah, kampus, perusahaan, instansi, komunitas) adalah halaman evergreen; musim adalah lapisan terjadwal di beranda dan halaman audiens. Hanya satu kampanye aktif pada satu waktu, H1 tidak berubah, dan kampanye tidak punya URL sendiri. Label musiman tetap tidak ditampilkan sampai kontennya dikonfirmasi klien.
+
 ### Fase 3: dashboard
 
 - `/admin` (Filament): kelola banner dan highlight musiman, layanan, segmen, portofolio, testimoni, paket.
@@ -223,6 +225,8 @@ Pekerjaan dianggap selesai jika:
 
 ## 14. Hal yang masih menunggu dari klien
 
+Daftar pertanyaan lengkap dan terprioritas ada di `CLIENT-QUESTIONS.md`.
+
 - Logo dan panduan warna
 - Foto hero (kegiatan tim dalam aksi, lihat `DESIGN.md` bagian 8) serta foto dan video lain (aktivitas, lokasi, event sebelumnya)
 - Portofolio, testimoni, logo klien
@@ -232,3 +236,4 @@ Pekerjaan dianggap selesai jika:
 - Nama domain
 - Warna atau mood yang disetujui
 - Konfirmasi badan hukum, email, dan klaim sertifikasi
+- Kalender musim, label, sub-headline, CTA, dan program unggulan per musim (`SEASONAL.md`)

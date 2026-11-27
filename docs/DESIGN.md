@@ -352,3 +352,16 @@ Aturan:
 ## 12. Menunggu dari klien
 
 Logo final (lockup), foto hero dan foto kegiatan asli, portofolio dan testimoni, alamat lengkap, Instagram dan sosmed lain, nama domain, paket dan harga, detail durasi/kapasitas tiap layanan, serta konfirmasi warna dan badan hukum.
+
+## 13. Sorotan musim
+
+Rancangan sistem lengkap ada di `SEASONAL.md`. Aturan visual yang tidak boleh dilanggar:
+
+- Sorotan musim adalah lapisan di beranda dan halaman audiens, bukan redesign. H1, logo, palet, dan font tidak berubah.
+- Label musim tampil sebagai eyebrow di atas H1. Di atas navy, teks `mist` dan garis `signal`.
+- Band sorotan memakai latar `mist`, border `line`, judul H2, dan maksimal tiga program unggulan berupa baris teks. Tanpa kartu, foto, ikon bulat, atau warna baru.
+- Oranye tetap hanya untuk aksi: garis eyebrow dan tombol utama. Jangan memakai oranye sebagai latar band musiman.
+- Tanpa popup, countdown, carousel, salju, confetti, atau animasi dekoratif. Gerak hanya `hero-rise`, `media-in`, dan satu `data-reveal` bila diperlukan.
+- Foto musiman hanya di hero, mengikuti spesifikasi foto hero: `<picture>` dua potongan, WebP, `width`/`height`, `alt` spesifik, `fetchpriority="high"`, di bawah 180 KB per potongan.
+- Hanya satu kampanye tampil pada satu waktu. Jika tidak ada kampanye aktif, beranda kembali ke tampilan default tanpa ruang kosong.
+- Jangan menampilkan label musiman sebelum kontennya dikonfirmasi klien.
