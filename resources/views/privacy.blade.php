@@ -17,19 +17,19 @@
         <x-container class="py-12 lg:py-16">
             <div class="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-10">
                 <div class="lg:col-span-8">
-                    <x-eyebrow>Privasi</x-eyebrow>
+                    <x-eyebrow class="animate-hero-rise">Privasi</x-eyebrow>
 
-                    <h1 id="judul-privasi" class="mt-5 font-display text-chapter font-bold tracking-heading text-navy">
+                    <h1 id="judul-privasi" class="mt-5 animate-hero-rise font-display text-chapter font-bold tracking-heading text-navy" style="animation-delay: 80ms">
                         Kebijakan Privasi
                     </h1>
 
-                    <p class="mt-5 max-w-prose text-lead text-charcoal">
+                    <p class="mt-5 max-w-prose animate-hero-rise text-lead text-charcoal" style="animation-delay: 160ms">
                         Halaman ini menjelaskan data apa yang kami terima saat Anda menghubungi MR Global Events &amp; Solutions
                         dan bagaimana data itu digunakan.
                     </p>
                 </div>
 
-                <div class="lg:col-span-3 lg:col-start-10">
+                <div class="animate-hero-rise lg:col-span-3 lg:col-start-10" style="animation-delay: 240ms">
                     <p class="text-label font-semibold uppercase tracking-label text-charcoal">Terakhir diperbarui</p>
                     <p class="mt-2 font-display text-card-lg font-bold tracking-heading text-navy">27 November 2026</p>
                 </div>
@@ -100,7 +100,7 @@
                                 </p>
                             </x-policy-section>
 
-                            <aside class="max-w-prose border-l-2 border-navy bg-mist px-6 py-6 sm:ml-16" aria-label="Komitmen kami">
+                            <aside class="max-w-prose border-l-2 border-navy bg-mist px-6 py-6 sm:ml-16" aria-label="Komitmen kami" data-reveal>
                                 <p class="text-label font-semibold uppercase tracking-label text-charcoal/70">Komitmen kami</p>
                                 <p class="mt-2 font-display text-card-lg font-bold tracking-heading text-navy">
                                     Kami tidak menjual atau menyewakan data Anda.
@@ -132,7 +132,7 @@
                     </div>
                 </div>
 
-                <aside class="lg:col-span-4 lg:col-start-9">
+                <aside class="lg:col-span-4 lg:col-start-9" data-reveal style="--reveal-delay: 100ms">
                     <div class="lg:sticky lg:top-28">
                         <nav aria-label="Isi halaman" class="hidden lg:block">
                             <p class="text-label font-semibold uppercase tracking-label text-charcoal">Isi halaman</p>
@@ -144,7 +144,7 @@
                                            class="group flex min-h-11 items-center gap-3 border-b border-line text-small text-charcoal transition-colors duration-150 hover:text-navy">
                                             <span class="w-6 text-label font-semibold tabular-nums text-charcoal/70 transition-colors duration-150 group-hover:text-navy" aria-hidden="true">{{ $section['number'] }}</span>
                                             <span class="flex-1">{{ $section['label'] }}</span>
-                                            <span class="h-px w-4 bg-line transition-colors duration-150 group-hover:bg-navy" aria-hidden="true"></span>
+                                            <span class="h-px w-4 bg-line transition-all duration-150 group-hover:w-6 group-hover:bg-navy" aria-hidden="true"></span>
                                         </a>
                                     </li>
                                 @endforeach

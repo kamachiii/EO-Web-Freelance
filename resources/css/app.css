@@ -121,6 +121,16 @@
         opacity: 1;
         transform: translateY(0);
     }
+
+    /* Nomor bagian privasi membesar halus saat section-nya muncul. */
+    html.js [data-reveal] .policy-number {
+        transform: scale(0.86);
+        transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1) 80ms;
+    }
+
+    html.js [data-reveal].is-visible .policy-number {
+        transform: scale(1);
+    }
 }
 
 /*

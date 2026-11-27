@@ -21,13 +21,13 @@
     <x-container class="page-cover-content flex flex-1 items-center py-12 lg:py-20">
         <div class="grid w-full gap-8 lg:grid-cols-12 lg:gap-10">
             <div class="lg:col-span-6 lg:self-center">
-                <x-eyebrow>{{ $eyebrow }}</x-eyebrow>
-                <h1 id="{{ $titleId }}" class="mt-5 font-display text-display font-bold tracking-display text-navy">
+                <x-eyebrow class="animate-hero-rise">{{ $eyebrow }}</x-eyebrow>
+                <h1 id="{{ $titleId }}" class="mt-5 animate-hero-rise font-display text-display font-bold tracking-display text-navy" style="animation-delay: 80ms">
                     {{ $title }}
                 </h1>
             </div>
 
-            <div class="lg:col-span-6 lg:col-start-7 lg:self-center">
+            <div class="animate-hero-rise lg:col-span-6 lg:col-start-7 lg:self-center" style="animation-delay: 160ms">
                 <p class="max-w-prose text-lead text-charcoal">{{ $intro }}</p>
                 {{ $aside ?? '' }}
             </div>

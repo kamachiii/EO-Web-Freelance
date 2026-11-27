@@ -4,8 +4,8 @@
     'title',
 ])
 
-<section id="{{ $id }}" aria-labelledby="judul-{{ $id }}" class="relative sm:pl-16">
-    <span class="absolute left-0 top-0 hidden h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-label font-semibold tabular-nums text-navy sm:flex" aria-hidden="true">
+<section id="{{ $id }}" aria-labelledby="judul-{{ $id }}" class="relative sm:pl-16" data-reveal>
+    <span class="policy-number absolute left-0 top-0 hidden h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-label font-semibold tabular-nums text-navy sm:flex" aria-hidden="true">
         {{ $number }}
     </span>
 

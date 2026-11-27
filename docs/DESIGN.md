@@ -212,7 +212,6 @@ Layanan tidak ditampilkan sebagai kartu seragam. Gunakan katalog bernomor:
 
 ### Form inquiry
 
-- Form dibungkus panel putih dengan garis atas navy 2 px dan eyebrow "Formulir penawaran".
 - Label di atas kolom, teks kecil semibold navy.
 - Kolom putih, border 1 px `navy/60` (kontras minimal 3:1), radius 4 px, teks `navy`, placeholder `charcoal/60`. Fokus memakai border navy penuh + ring 2 px `navy/20`; outline global dimatikan khusus kolom form agar ring tidak dobel.
 - Error: border navy + ring 2 px `navy/15` + teks error di bawah kolom. Jangan hanya warna.
@@ -260,15 +259,15 @@ Lingkaran oranye 56 px, ikon navy, kanan bawah, `aria-label="Chat WhatsApp"`. Ta
 
 Empat peran, tidak lebih:
 
-1. **Urutan hero** (`hero-rise`): eyebrow, judul, paragraf, tombol masuk berurutan 60–90 ms. Foto masuk dengan `media-in` (opacity saja, tanpa scale).
-2. **Reveal section** (`data-reveal`): elemen muncul 14 px dari bawah saat 10% masuk viewport, sekali saja. Hanya aktif jika JavaScript tersedia dan pengguna tidak meminta reduced motion.
+1. **Urutan hero** (`hero-rise`): eyebrow, judul, paragraf, tombol masuk berurutan 60–90 ms. Foto masuk dengan `media-in` (opacity saja, tanpa scale). Cover halaman memakai urutan yang sama: eyebrow, judul, intro, lalu aside.
+2. **Reveal section** (`data-reveal`): elemen muncul 14 px dari bawah saat 10% masuk viewport, sekali saja. Hanya aktif jika JavaScript tersedia dan pengguna tidak meminta reduced motion. Nomor section privasi ikut membesar halus saat section muncul.
 3. **Micro-interaction:** hover baris layanan (judul bergeser, foto membesar, aksi bergaris bawah), transisi header, dan transisi menu mobile.
 4. **Strip audiens berjalan:** dua salinan daftar yang sama digeser perlahan dalam loop. Berhenti saat hover. Saat reduced motion, menjadi daftar statis yang membungkus.
 
 Aturan:
 
 - Durasi 200–600 ms. Easing `cubic-bezier(0.22, 1, 0.36, 1)` (`ease-editorial`).
-- Jangan memberi animasi pada setiap elemen. Satu section cukup satu reveal.
+- Jangan memberi animasi pada setiap elemen. Satu section cukup satu reveal. Cover halaman dan header privasi memakai `hero-rise`; section privasi, panel komitmen, aside, dan kolom kontak memakai `data-reveal`.
 - `prefers-reduced-motion: reduce` mematikan animasi, transisi, dan smooth scroll.
 - Tanpa parallax, tanpa animasi loop dekoratif lain, tanpa cursor custom. Hanya strip audiens yang boleh berjalan terus-menerus.
 - State scroll header, tombol WhatsApp, dan tombol kembali ke atas memakai satu listener pasif + `requestAnimationFrame`, bukan listener Alpine per event.
@@ -332,7 +331,7 @@ Aturan:
 - Cover halaman: H1 "Kontak", paragraf pembuka, baris WhatsApp dan email dengan gaya yang sama (label, nilai, panah, garis bawah), serta band navy "Kontak langsung" + "Kirim pesan" ke formulir. Di bawah baris email ada catatan singkat untuk penawaran (disembunyikan di bawah 360 px). Pada lebar ≤1023 px dan tinggi ≤656 px, baris email disembunyikan agar cover tetap satu layar; email tetap ada di daftar info. Pada tinggi ≤480 px, seluruh aside disembunyikan. Di desktop dengan tinggi ≤608 px, padding vertikal cover dirapatkan.
 - Mobile: form dulu, info kontak setelahnya. Desktop: info kiri, form kanan.
 - Info kontak berupa daftar berlabel, tanpa lingkaran ikon.
-- Form berupa panel putih dengan garis atas navy, ringkasan error, preselection layanan, dan panel sukses.
+- Form dengan ringkasan error, preselection layanan, dan panel sukses.
 - Tanpa peta sampai alamat lengkap dikonfirmasi.
 
 ### Kebijakan privasi
