@@ -47,6 +47,17 @@ return [
             'report' => false,
         ],
 
+        // Foto hero disimpan langsung di public/images/hero supaya nama file
+        // tetap cocok dengan data banner dan tidak perlu storage:link.
+        'hero' => [
+            'driver' => 'local',
+            'root' => public_path('images/hero'),
+            'url' => '/images/hero',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

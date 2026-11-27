@@ -43,7 +43,7 @@
                     <a href="{{ $actionHref }}"
                        class="group inline-flex min-h-11 items-center gap-2 text-small font-semibold text-white underline-offset-4 hover:underline">
                         {{ $actionLabel }}
-                        <x-icon name="chevron-down" class="h-4 w-4 transition-transform duration-150 group-hover:translate-y-0.5" />
+                        <x-site-icon name="chevron-down" class="h-4 w-4 transition-transform duration-150 group-hover:translate-y-0.5" />
                     </a>
                 @endif
             </div>

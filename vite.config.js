@@ -13,9 +13,9 @@ export default defineConfig({
     server: {
         port: 5174,
         cors: true,
-        origin: 'https://mrglobal-event.kamachiii.web.id',
+        origin: 'https://mrglobal-events.kamachiii.web.id',
         hmr: {
-            host: 'mrglobal-event.kamachiii.web.id',
+            host: 'mrglobal-events.kamachiii.web.id',
             protocol: 'wss',
             clientPort: 443,
         },

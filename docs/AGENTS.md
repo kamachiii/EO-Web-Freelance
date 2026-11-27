@@ -209,6 +209,7 @@ Aturan desain yang tidak boleh dilanggar (ringkasan, detail di `DESIGN.md`):
 - Commit kecil dengan pesan jelas (bahasa Indonesia atau Inggris, konsisten).
 - Jangan force-push ke `main`.
 - Deploy ke shared hosting: upload kode (atau `git pull`), `composer install --no-dev --optimize-autoloader`, jalankan migrasi, pastikan `public/build` sudah ada, set document root ke folder `public`, `php artisan config:cache`, `php artisan route:cache`, `php artisan view:cache`, dan `php artisan storage:link` bila perlu.
+- Panel admin (Filament): jalankan `php artisan filament:assets` karena asetnya tidak masuk git, isi `ADMIN_NAME`, `ADMIN_EMAIL`, dan `ADMIN_PASSWORD` di `.env`, lalu buat akun dengan `php artisan db:seed --class=AdminUserSeeder`. Server wajib punya `ext-intl` dan `ext-zip`, serta folder `public/images/hero` harus writable untuk unggahan banner.
 - `public/.htaccess` sudah mengatur cache aset statis: build Vite dan font 1 tahun, gambar 1 bulan. Jangan hapus blok `mod_expires` saat menambah aturan rewrite.
 - Sebelum deploy: cek `APP_ENV=production`, `APP_DEBUG=false`, dan `APP_URL` benar. Jika di belakang Cloudflare/proxy, isi `TRUSTED_PROXIES` dengan IP proxy (atau `*` hanya bila origin tidak bisa diakses langsung) supaya `asset()` dan `route()` memakai HTTPS.
 

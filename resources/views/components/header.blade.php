@@ -53,8 +53,8 @@
                     :aria-expanded="open"
                     aria-controls="menu-mobile"
                     :aria-label="open ? 'Tutup menu' : 'Buka menu'">
-                <x-icon name="bars-3" class="h-6 w-6" x-show="! open" />
-                <x-icon name="x-mark" class="h-6 w-6" x-show="open" x-cloak />
+                <x-site-icon name="bars-3" class="h-6 w-6" x-show="! open" />
+                <x-site-icon name="x-mark" class="h-6 w-6" x-show="open" x-cloak />
             </button>
         </div>
     </x-container>

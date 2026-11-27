@@ -9,6 +9,6 @@
     {{ $slot }}
 
     @if ($arrow)
-        <x-icon name="arrow-right" class="h-5 w-5" />
+        <x-site-icon name="arrow-right" class="h-5 w-5" />
     @endif
 </a>

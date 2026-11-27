@@ -26,7 +26,7 @@
                         <span class="block text-label font-semibold uppercase tracking-label text-charcoal">WhatsApp</span>
                         <span class="mt-1 block whitespace-nowrap text-body font-semibold sm:text-card-lg">{{ WhatsApp::display() }}</span>
                     </span>
-                    <x-icon name="arrow-up-right" class="h-5 w-5 shrink-0 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    <x-site-icon name="arrow-up-right" class="h-5 w-5 shrink-0 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </a>
 
                 <div class="page-cover-email mt-4">
@@ -36,7 +36,7 @@
                             <span class="block text-label font-semibold uppercase tracking-label text-charcoal">Email</span>
                             <span class="mt-1 block break-all text-body font-semibold sm:text-card-lg">{{ config('site.email') }}</span>
                         </span>
-                        <x-icon name="arrow-up-right" class="h-5 w-5 shrink-0 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                        <x-site-icon name="arrow-up-right" class="h-5 w-5 shrink-0 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </a>
 
                     <p class="mt-3 hidden max-w-prose text-small text-charcoal min-[360px]:block">
@@ -173,7 +173,7 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                    <x-icon name="chevron-down" class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-navy" />
+                                    <x-site-icon name="chevron-down" class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-navy" />
                                 </div>
                                 @if ($errors->has('service_id'))
                                     <p id="service_id-error" class="mt-2 text-small font-semibold text-navy" role="alert">{{ $errors->first('service_id') }}</p>
