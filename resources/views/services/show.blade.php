@@ -8,6 +8,14 @@
 @endphp
 
 <x-layout :title="$seo['title']" :description="$seo['description']">
+    <x-slot name="head">
+        @include('partials.json-ld-breadcrumb', ['items' => [
+            ['name' => 'Beranda', 'url' => route('home')],
+            ['name' => 'Layanan', 'url' => route('services.index')],
+            ['name' => $service->name, 'url' => route('services.show', $service)],
+        ]])
+    </x-slot>
+
     <section class="bg-white pb-12 pt-8 lg:pb-20 lg:pt-12" aria-labelledby="judul-layanan">
         <x-container>
             <nav aria-label="Breadcrumb" class="mb-8">

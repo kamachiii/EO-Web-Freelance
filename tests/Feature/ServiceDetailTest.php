@@ -44,6 +44,21 @@ class ServiceDetailTest extends TestCase
         $response->assertSee('https://wa.me/6285771239861', false);
     }
 
+    public function test_detail_page_has_breadcrumb_structured_data(): void
+    {
+        $service = Service::where('slug', 'outbound-fun-games-team-building')->firstOrFail();
+
+        $response = $this->get(route('services.show', $service));
+
+        $response->assertOk();
+        $response->assertSee('"@type":"BreadcrumbList"', false);
+        $response->assertSee('"position":1', false);
+        $response->assertSee('"position":3', false);
+        $response->assertSee('"name":"Beranda"', false);
+        $response->assertSee('"name":"Layanan"', false);
+        $response->assertSee('"item":"'.route('services.show', $service).'"', false);
+    }
+
     public function test_inactive_service_returns_not_found(): void
     {
         $service = Service::active()->firstOrFail();
