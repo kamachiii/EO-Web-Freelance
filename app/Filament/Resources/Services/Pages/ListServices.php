@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Services\Pages;
 use App\Filament\Resources\Services\ServiceResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Filament\Support\Enums\Width;
 
 class ListServices extends ListRecords
 {
@@ -13,7 +14,10 @@ class ListServices extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                ->modal()
+                ->modalWidth(Width::FiveExtraLarge)
+                ->createAnother(false),
         ];
     }
 }

@@ -38,7 +38,7 @@ class PackageForm
                             ->helperText('Dipakai di /paket/{slug}.'),
                         Textarea::make('description')
                             ->label('Deskripsi')
-                            ->rows(4)
+                            ->rows(3)
                             ->columnSpanFull()
                             ->helperText('Jelaskan isi paket tanpa menjanjikan yang belum disepakati klien.'),
                         TextInput::make('price_label')

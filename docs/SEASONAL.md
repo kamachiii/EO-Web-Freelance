@@ -2,7 +2,9 @@
 
 Rancangan sistem **sorotan musim** untuk website MR Global Events & Solutions. Dokumen ini menjelaskan konsep, aturan konten, model data, alur teknis, dan rencana implementasi. Aturan visual tetap mengikuti `DESIGN.md`; aturan kejujuran konten tetap mengikuti `AGENTS.md` bagian 8.
 
-Status: **rancangan, belum diimplementasikan.** Tidak ada label atau kampanye musiman yang boleh tampil ke pengunjung sampai kontennya dikonfirmasi klien.
+Status: **inti sorotan musim sudah diimplementasikan (Fase 3).** Yang aktif: resolver satu kampanye, perubahan hero (eyebrow, sub-headline, CTA, pesan WhatsApp), band sorotan dengan maksimal tiga program unggulan, dan pratinjau admin. Halaman audiens, foto kampanye, dan konten musiman final masih menunggu klien. Tidak ada label musiman yang tampil ke pengunjung sampai admin mengaktifkan kampanye yang sudah disetujui.
+
+Catatan implementasi: tabel tetap bernama `seasonal_segments` (rename ke `seasonal_campaigns` ditunda). Kolom tambahan yang sudah ada: `priority`, `hero_subheadline`, `spotlight_title`, `spotlight_description`, `cta_label`, `whatsapp_message`, dan `featured_service_ids`. Pratinjau memakai `/?preview={id}` dan hanya berlaku untuk admin atau `APP_ENV=local`.
 
 ---
 

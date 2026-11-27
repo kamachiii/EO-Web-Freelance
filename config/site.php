@@ -182,6 +182,7 @@ return [
         'testimonials' => false,
         'portfolio' => false,
         'packages' => false,
+        'seasonal_spotlight' => true,
         'map' => false,          // alamat lengkap basecamp belum ada
         'social_media' => false, // Instagram dan sosmed lain belum ada
         'schema_email' => false, // email belum dikonfirmasi; jangan masukkan ke JSON-LD

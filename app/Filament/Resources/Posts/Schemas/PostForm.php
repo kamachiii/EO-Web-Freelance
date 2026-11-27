@@ -45,13 +45,13 @@ class PostForm
                     ->schema([
                         Textarea::make('excerpt')
                             ->label('Ringkasan')
-                            ->rows(3)
+                            ->rows(2)
                             ->maxLength(300)
                             ->columnSpanFull()
                             ->helperText('Tampil di daftar artikel dan hasil pencarian.'),
                         Textarea::make('body')
                             ->label('Isi artikel')
-                            ->rows(14)
+                            ->rows(10)
                             ->columnSpanFull()
                             ->helperText('Pisahkan paragraf dengan satu baris kosong. Jangan mengarang data atau kutipan.'),
                         FileUpload::make('cover_image')

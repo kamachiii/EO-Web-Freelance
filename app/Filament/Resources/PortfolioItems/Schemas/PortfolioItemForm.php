@@ -71,7 +71,7 @@ class PortfolioItemForm
                             ->helperText('Rasio lanskap 16:9, maksimal 4 MB. Jangan pakai foto tanpa izin klien.'),
                         Textarea::make('description')
                             ->label('Deskripsi')
-                            ->rows(6)
+                            ->rows(4)
                             ->columnSpanFull()
                             ->helperText('Ceritakan kebutuhan klien dan solusi yang diberikan. Jangan mengarang angka peserta atau hasil.'),
                     ])

@@ -24,6 +24,9 @@
     <x-slot name="head">
         <link rel="preload" as="image" href="{{ $heroImage['desktop'] }}" media="(min-width: 1024px)" fetchpriority="high">
         <link rel="preload" as="image" href="{{ $heroImage['mobile'] }}" media="(max-width: 1023px)" fetchpriority="high">
+        @if ($isSpotlightPreview)
+            <meta name="robots" content="noindex, nofollow">
+        @endif
         @include('partials.json-ld-organization')
     </x-slot>
 
@@ -31,6 +34,12 @@
     <section class="flex flex-col justify-center overflow-hidden bg-navy text-white focus-light sm:min-h-[calc(100svh_-_5.3125rem)]" aria-labelledby="judul-hero">
         <x-container class="grid items-center gap-12 pb-14 pt-10 lg:grid-cols-12 lg:gap-10 lg:pb-20 lg:pt-16">
             <div class="lg:col-span-6">
+                @if ($spotlight)
+                    <x-eyebrow tone="dark" class="mb-5 animate-hero-rise" style="animation-delay: 40ms">
+                        {{ $spotlight->label }}
+                    </x-eyebrow>
+                @endif
+
                 <h1 id="judul-hero"
                     class="max-w-[15ch] animate-hero-rise font-display text-display font-bold tracking-display"
                     style="animation-delay: 80ms">
@@ -38,11 +47,13 @@
                 </h1>
 
                 <p class="mt-6 max-w-prose animate-hero-rise text-lead text-mist" style="animation-delay: 160ms">
-                    {{ $banner?->subheadline ?: config('site.subheadline') }}
+                    {{ $spotlight?->hero_subheadline ?: ($banner?->subheadline ?: config('site.subheadline')) }}
                 </p>
 
                 <div class="mt-8 flex animate-hero-rise flex-col gap-3 sm:flex-row sm:gap-4" style="animation-delay: 240ms">
-                    <x-button href="{{ WhatsApp::link() }}">Konsultasi Gratis Sekarang</x-button>
+                    <x-button href="{{ WhatsApp::link($spotlight?->whatsapp_message) }}">
+                        {{ $spotlight ? $spotlight->ctaLabel() : 'Konsultasi Gratis Sekarang' }}
+                    </x-button>
                     <x-button href="{{ route('services.index') }}" variant="secondary">Lihat Program Kami</x-button>
                 </div>
 
@@ -90,6 +101,10 @@
             </div>
         </x-container>
     </div>
+
+    @if ($spotlight)
+        <x-seasonal-spotlight :campaign="$spotlight" :services="$spotlightServices" />
+    @endif
 
     {{-- Tentang singkat: heading dan paragraf pembuka di kiri, konteks dan fakta di kanan. --}}
     <x-section aria-labelledby="judul-siapa-kami">

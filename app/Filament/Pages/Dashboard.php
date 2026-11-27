@@ -57,11 +57,8 @@ class Dashboard extends BaseDashboard
                 'banners' => BannerResource::getUrl('index'),
                 'seasons' => SeasonalSegmentResource::getUrl('index'),
                 'calendar' => SeasonalCalendar::getUrl(),
-                'create_banner' => BannerResource::getUrl('create'),
-                'create_service' => ServiceResource::getUrl('create'),
-                'create_season' => SeasonalSegmentResource::getUrl('create'),
-                'create_portfolio' => PortfolioItemResource::getUrl('create'),
-                'create_post' => PostResource::getUrl('create'),
+                'portfolio' => PortfolioItemResource::getUrl('index'),
+                'posts' => PostResource::getUrl('index'),
                 'site' => url('/'),
             ],
         ];

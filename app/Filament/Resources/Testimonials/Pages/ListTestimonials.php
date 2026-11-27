@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Testimonials\Pages;
 use App\Filament\Resources\Testimonials\TestimonialResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Filament\Support\Enums\Width;
 
 class ListTestimonials extends ListRecords
 {
@@ -13,7 +14,10 @@ class ListTestimonials extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                ->modal()
+                ->modalWidth(Width::FiveExtraLarge)
+                ->createAnother(false),
         ];
     }
 }

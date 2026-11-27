@@ -6,6 +6,7 @@ use App\Models\Post;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Support\Enums\Width;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -46,6 +47,7 @@ class PostsTable
             ])
             ->defaultSort('published_at', 'desc')
             ->stackedOnMobile()
+            ->recordUrl(null)
             ->filters([
                 TernaryFilter::make('is_published')
                     ->label('Status terbit')
@@ -54,7 +56,9 @@ class PostsTable
                     ->falseLabel('Masih draf'),
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->modal()
+                    ->modalWidth(Width::FiveExtraLarge),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

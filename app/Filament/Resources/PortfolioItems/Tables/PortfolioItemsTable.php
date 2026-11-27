@@ -6,6 +6,7 @@ use App\Models\PortfolioItem;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Support\Enums\Width;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -63,8 +64,11 @@ class PortfolioItemsTable
                     ->trueLabel('Tampil')
                     ->falseLabel('Disembunyikan'),
             ])
+            ->recordUrl(null)
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->modal()
+                    ->modalWidth(Width::FiveExtraLarge),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -35,7 +35,7 @@ class TestimonialForm
                         Textarea::make('quote')
                             ->label('Kutipan')
                             ->required()
-                            ->rows(5)
+                            ->rows(4)
                             ->maxLength(1000)
                             ->columnSpanFull()
                             ->helperText('Salin apa adanya dari klien. Jangan mengarang atau memperhalus tanpa izin.'),

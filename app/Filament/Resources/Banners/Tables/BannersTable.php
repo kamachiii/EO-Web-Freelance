@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Banners\Tables;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Support\Enums\Width;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
@@ -43,8 +44,11 @@ class BannersTable
             ->defaultSort('sort_order')
             ->reorderable('sort_order')
             ->stackedOnMobile()
+            ->recordUrl(null)
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->modal()
+                    ->modalWidth(Width::FiveExtraLarge),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -7,6 +7,7 @@ use App\Filament\Resources\SeasonalSegments\SeasonalSegmentResource;
 use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Filament\Support\Enums\Width;
 
 class ListSeasonalSegments extends ListRecords
 {
@@ -21,7 +22,10 @@ class ListSeasonalSegments extends ListRecords
                 ->color('gray')
                 ->url(SeasonalCalendar::getUrl()),
             CreateAction::make()
-                ->label('Tambah musim'),
+                ->label('Tambah musim')
+                ->modal()
+                ->modalWidth(Width::FiveExtraLarge)
+                ->createAnother(false),
         ];
     }
 }

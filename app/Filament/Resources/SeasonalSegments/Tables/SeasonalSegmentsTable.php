@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\SeasonalSegments\Tables;
 
 use App\Models\SeasonalSegment;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Support\Enums\Width;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
@@ -49,8 +51,16 @@ class SeasonalSegmentsTable
             ->defaultSort('starts_at')
             ->reorderable('sort_order')
             ->stackedOnMobile()
+            ->recordUrl(null)
             ->recordActions([
-                EditAction::make(),
+                Action::make('preview')
+                    ->label('Pratinjau')
+                    ->icon(Heroicon::OutlinedEye)
+                    ->url(fn (SeasonalSegment $record): string => route('home', ['preview' => $record->id]))
+                    ->openUrlInNewTab(),
+                EditAction::make()
+                    ->modal()
+                    ->modalWidth(Width::FiveExtraLarge),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

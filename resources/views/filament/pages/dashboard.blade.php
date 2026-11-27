@@ -14,9 +14,9 @@
                         <x-filament::icon icon="heroicon-o-arrow-top-right-on-square" class="h-4 w-4" />
                         Lihat situs
                     </a>
-                    <a href="{{ $urls['create_banner'] }}" class="admin-hero-btn is-signal">
-                        <x-filament::icon icon="heroicon-o-plus" class="h-4 w-4" />
-                        Banner baru
+                    <a href="{{ $urls['banners'] }}" class="admin-hero-btn is-signal">
+                        <x-filament::icon icon="heroicon-o-photo" class="h-4 w-4" />
+                        Kelola banner
                     </a>
                 </div>
             </div>
@@ -156,21 +156,25 @@
                     </div>
 
                     <div class="admin-quick-actions">
-                        <a href="{{ $urls['create_service'] }}" class="admin-quick-action">
+                        <a href="{{ $urls['banners'] }}" class="admin-quick-action">
+                            <x-filament::icon icon="heroicon-o-photo" class="h-4 w-4" />
+                            Kelola banner
+                        </a>
+                        <a href="{{ $urls['services'] }}" class="admin-quick-action">
                             <x-filament::icon icon="heroicon-o-briefcase" class="h-4 w-4" />
-                            Tambah layanan
+                            Kelola layanan
                         </a>
-                        <a href="{{ $urls['create_season'] }}" class="admin-quick-action">
+                        <a href="{{ $urls['seasons'] }}" class="admin-quick-action">
                             <x-filament::icon icon="heroicon-o-calendar-days" class="h-4 w-4" />
-                            Atur musim
+                            Kelola musim
                         </a>
-                        <a href="{{ $urls['create_portfolio'] }}" class="admin-quick-action">
+                        <a href="{{ $urls['portfolio'] }}" class="admin-quick-action">
                             <x-filament::icon icon="heroicon-o-squares-2x2" class="h-4 w-4" />
-                            Tambah portofolio
+                            Kelola portofolio
                         </a>
-                        <a href="{{ $urls['create_post'] }}" class="admin-quick-action">
+                        <a href="{{ $urls['posts'] }}" class="admin-quick-action">
                             <x-filament::icon icon="heroicon-o-newspaper" class="h-4 w-4" />
-                            Tulis artikel
+                            Kelola artikel
                         </a>
                         <a href="{{ $urls['inquiries'] }}" class="admin-quick-action">
                             <x-filament::icon icon="heroicon-o-inbox" class="h-4 w-4" />
