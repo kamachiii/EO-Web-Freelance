@@ -19,6 +19,7 @@ class SitemapController extends Controller
             route('services.index'),
             route('supporting-services.index'),
             route('contact'),
+            route('privacy'),
         ];
 
         foreach (Service::active()->get() as $service) {

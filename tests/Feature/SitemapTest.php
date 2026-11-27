@@ -25,12 +25,13 @@ class SitemapTest extends TestCase
         $this->assertStringContainsString('http://www.sitemaps.org/schemas/sitemap/0.9', $content);
 
         $services = Service::active()->get();
-        $this->assertSame(5 + $services->count(), substr_count($content, '<loc>'));
+        $this->assertSame(6 + $services->count(), substr_count($content, '<loc>'));
         $this->assertStringContainsString('<loc>'.route('home').'</loc>', $content);
         $this->assertStringContainsString('<loc>'.route('about').'</loc>', $content);
         $this->assertStringContainsString('<loc>'.route('services.index').'</loc>', $content);
         $this->assertStringContainsString('<loc>'.route('supporting-services.index').'</loc>', $content);
         $this->assertStringContainsString('<loc>'.route('contact').'</loc>', $content);
+        $this->assertStringContainsString('<loc>'.route('privacy').'</loc>', $content);
 
         foreach ($services as $service) {
             $this->assertStringContainsString('<loc>'.route('services.show', $service).'</loc>', $content);

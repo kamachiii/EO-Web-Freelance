@@ -94,7 +94,14 @@
 
     <div class="border-t border-white/15">
         <x-container class="flex flex-col gap-2 py-6 text-small lg:flex-row lg:items-center lg:justify-between lg:gap-10">
-            <p>&copy; {{ date('Y') }} {{ config('site.name') }}</p>
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+                <p>&copy; {{ date('Y') }} {{ config('site.name') }}</p>
+                <a href="{{ route('privacy') }}"
+                   @if (request()->routeIs('privacy')) aria-current="page" @endif
+                   class="inline-flex min-h-11 items-center underline decoration-white/40 underline-offset-4 transition-colors duration-150 hover:decoration-white">
+                    Kebijakan Privasi
+                </a>
+            </div>
             <p class="text-mist lg:pr-16 lg:text-right">Event organizer untuk perusahaan, instansi, komunitas, universitas, dan sekolah.</p>
         </x-container>
     </div>

@@ -95,6 +95,19 @@ class PagesTest extends TestCase
                     'Bogor / Jakarta',
                     'name="website"',
                     'name="_token"',
+                    'Kebijakan privasi',
+                ],
+            ],
+            'kebijakan privasi' => [
+                'uri' => '/kebijakan-privasi',
+                'h1' => 'Kebijakan Privasi',
+                'title' => 'Kebijakan Privasi',
+                'sees' => [
+                    'Data yang kami terima',
+                    'Penggunaan data',
+                    'Cookie dan analytics',
+                    'Terakhir diperbarui: 27 November 2026',
+                    'Kebijakan Privasi',
                 ],
             ],
         ];

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\RobotstxtController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceDetailController;
@@ -18,6 +19,7 @@ Route::get('/layanan', ServiceController::class)->name('services.index');
 Route::get('/layanan/{service}', ServiceDetailController::class)->name('services.show');
 Route::get('/layanan-pendukung', SupportingServiceController::class)->name('supporting-services.index');
 Route::get('/kontak', ContactController::class)->name('contact');
+Route::get('/kebijakan-privasi', PrivacyController::class)->name('privacy');
 
 // Batasi spam dari form Kontak (docs/AGENTS.md bagian 11).
 Route::post('/kontak', StoreInquiryController::class)

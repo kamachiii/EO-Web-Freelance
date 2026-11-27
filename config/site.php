@@ -170,6 +170,10 @@ return [
             'title' => 'Kontak dan Konsultasi Gratis | MR Global Events & Solutions',
             'description' => 'Konsultasi gratis via WhatsApp, atau kirim pesan untuk meminta penawaran acara perusahaan, instansi, komunitas, dan sekolah.',
         ],
+        'privacy' => [
+            'title' => 'Kebijakan Privasi | MR Global Events & Solutions',
+            'description' => 'Cara MR Global Events & Solutions mengumpulkan, menggunakan, dan menyimpan data yang Anda kirim melalui situs ini.',
+        ],
     ],
 
     // Section yang isinya belum ada dari klien disembunyikan sampai datanya masuk.

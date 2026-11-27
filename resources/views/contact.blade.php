@@ -194,7 +194,13 @@
 
                             <div class="sm:col-span-2">
                                 <x-button type="submit" class="w-full sm:w-auto">Kirim Pesan</x-button>
-                                <p class="mt-4 text-tiny text-charcoal">Data Anda hanya kami gunakan untuk membalas permintaan ini.</p>
+                                <p class="mt-4 text-tiny text-charcoal">
+                                    Data Anda hanya kami gunakan untuk membalas permintaan ini.
+                                    <a href="{{ route('privacy') }}"
+                                       class="underline decoration-line underline-offset-2 transition-colors duration-150 hover:text-navy hover:decoration-navy">
+                                        Kebijakan privasi
+                                    </a>.
+                                </p>
                             </div>
                         </div>
                     </form>
