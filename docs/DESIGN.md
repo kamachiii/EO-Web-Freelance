@@ -212,8 +212,9 @@ Layanan tidak ditampilkan sebagai kartu seragam. Gunakan katalog bernomor:
 
 ### Form inquiry
 
+- Form dibungkus panel putih dengan garis atas navy 2 px dan eyebrow "Formulir penawaran".
 - Label di atas kolom, teks kecil semibold navy.
-- Kolom putih, border 1 px `navy/60` (kontras minimal 3:1), radius 4 px, teks `navy`, placeholder `charcoal/60`. Fokus memakai ring global dan border navy penuh.
+- Kolom putih, border 1 px `navy/60` (kontras minimal 3:1), radius 4 px, teks `navy`, placeholder `charcoal/60`. Fokus memakai border navy penuh + ring 2 px `navy/20`; outline global dimatikan khusus kolom form agar ring tidak dobel.
 - Error: border navy + ring 2 px `navy/15` + teks error di bawah kolom. Jangan hanya warna.
 - Ringkasan error di atas form, dapat difokuskan.
 - Setelah sukses: form diganti panel konfirmasi. Jangan biarkan form kosong terbuka.
@@ -331,14 +332,16 @@ Aturan:
 - Cover halaman: H1 "Kontak", paragraf pembuka, baris WhatsApp dan email dengan gaya yang sama (label, nilai, panah, garis bawah), serta band navy "Kontak langsung" + "Kirim pesan" ke formulir. Di bawah baris email ada catatan singkat untuk penawaran (disembunyikan di bawah 360 px). Pada lebar ≤1023 px dan tinggi ≤656 px, baris email disembunyikan agar cover tetap satu layar; email tetap ada di daftar info. Pada tinggi ≤480 px, seluruh aside disembunyikan. Di desktop dengan tinggi ≤608 px, padding vertikal cover dirapatkan.
 - Mobile: form dulu, info kontak setelahnya. Desktop: info kiri, form kanan.
 - Info kontak berupa daftar berlabel, tanpa lingkaran ikon.
-- Form dengan ringkasan error, preselection layanan, dan panel sukses.
+- Form berupa panel putih dengan garis atas navy, ringkasan error, preselection layanan, dan panel sukses.
 - Tanpa peta sampai alamat lengkap dikonfirmasi.
 
 ### Kebijakan privasi
 
 - Header band `mist`: eyebrow "Privasi", H1 `text-chapter`, paragraf pembuka, dan tanggal pembaruan di kolom kanan.
-- Konten 7 kolom; aside 4 kolom mulai kolom 9, sticky di desktop, berisi daftar isi bernomor dan blok kontak.
-- Setiap bagian memakai garis atas `line`, nomor dua digit, dan H2 `text-card-lg`. Tanpa heading raksasa.
+- Konten 7 kolom memakai rel vertikal bernomor 01–07 di desktop; di mobile nomor tampil inline. Setiap bagian memakai H2 `text-card-lg`.
+- Daftar data memakai grid dua kolom berlatarbelakang `mist` dengan garis `line`; tanpa titik koma.
+- Komitmen "Kami tidak menjual atau menyewakan data Anda" tampil sebagai panel `mist` bergaris kiri navy di antara bagian 04 dan 05.
+- Aside 4 kolom mulai kolom 9, sticky di desktop, berisi daftar isi bernomor dan kartu navy "Pertanyaan privasi" dengan tautan WhatsApp/email.
 - Di mobile aside turun setelah konten; daftar isi desktop disembunyikan.
 
 ### 404 dan 429

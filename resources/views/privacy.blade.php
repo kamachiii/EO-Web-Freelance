@@ -31,7 +31,7 @@
 
                 <div class="lg:col-span-3 lg:col-start-10">
                     <p class="text-label font-semibold uppercase tracking-label text-charcoal">Terakhir diperbarui</p>
-                    <p class="mt-2 text-body font-semibold text-navy">27 November 2026</p>
+                    <p class="mt-2 font-display text-card-lg font-bold tracking-heading text-navy">27 November 2026</p>
                 </div>
             </div>
         </x-container>
@@ -41,127 +41,94 @@
         <x-container>
             <div class="grid gap-12 lg:grid-cols-12 lg:gap-10">
                 <div class="lg:col-span-7">
-                    <div class="space-y-8">
-                        <section id="data-yang-kami-terima" aria-labelledby="judul-data-yang-kami-terima"
-                                 class="border-t border-line pt-6 first:border-t-0 first:pt-0">
-                            <div class="flex items-baseline gap-4">
-                                <span class="text-label font-semibold tabular-nums text-charcoal/70" aria-hidden="true">01</span>
-                                <h2 id="judul-data-yang-kami-terima" class="font-display text-card-lg font-bold tracking-heading text-navy">
-                                    Data yang kami terima
-                                </h2>
-                            </div>
+                    <div class="relative">
+                        <div class="absolute bottom-5 left-5 top-5 hidden w-px bg-line sm:block" aria-hidden="true"></div>
 
-                            <div class="mt-4 space-y-4 text-body-lg text-charcoal">
-                                <p class="max-w-prose">
-                                    Saat Anda mengisi formulir kontak, kami menerima data yang Anda isi sendiri:
-                                </p>
-                                <ul class="max-w-prose list-disc space-y-2 pl-5">
-                                    <li>nama;</li>
-                                    <li>nomor WhatsApp;</li>
-                                    <li>alamat email, jika Anda mengisinya;</li>
-                                    <li>layanan yang diminati, jika Anda memilihnya;</li>
-                                    <li>isi pesan.</li>
+                        <div class="space-y-10">
+                            <x-policy-section id="data-yang-kami-terima" number="01" title="Data yang kami terima">
+                                <p>Saat Anda mengisi formulir kontak, kami menerima data yang Anda isi sendiri.</p>
+
+                                <ul class="mt-5 grid gap-px overflow-hidden rounded-[6px] border border-line bg-line sm:grid-cols-2">
+                                    <li class="flex items-center gap-3 bg-mist px-5 py-4 text-body">
+                                        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-navy" aria-hidden="true"></span>
+                                        Nama
+                                    </li>
+                                    <li class="flex items-center gap-3 bg-mist px-5 py-4 text-body">
+                                        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-navy" aria-hidden="true"></span>
+                                        Nomor WhatsApp
+                                    </li>
+                                    <li class="flex items-center gap-3 bg-mist px-5 py-4 text-body">
+                                        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-navy" aria-hidden="true"></span>
+                                        Email (opsional)
+                                    </li>
+                                    <li class="flex items-center gap-3 bg-mist px-5 py-4 text-body">
+                                        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-navy" aria-hidden="true"></span>
+                                        Layanan (opsional)
+                                    </li>
+                                    <li class="flex items-center gap-3 bg-mist px-5 py-4 text-body sm:col-span-2">
+                                        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-navy" aria-hidden="true"></span>
+                                        Pesan
+                                    </li>
                                 </ul>
-                                <p class="max-w-prose">
+
+                                <p class="mt-4">
                                     Jika Anda menghubungi kami langsung melalui WhatsApp atau email, kami juga menerima data yang
                                     Anda kirim melalui kanal tersebut.
                                 </p>
-                            </div>
-                        </section>
+                            </x-policy-section>
 
-                        <section id="penggunaan-data" aria-labelledby="judul-penggunaan-data"
-                                 class="border-t border-line pt-6">
-                            <div class="flex items-baseline gap-4">
-                                <span class="text-label font-semibold tabular-nums text-charcoal/70" aria-hidden="true">02</span>
-                                <h2 id="judul-penggunaan-data" class="font-display text-card-lg font-bold tracking-heading text-navy">
-                                    Penggunaan data
-                                </h2>
-                            </div>
+                            <x-policy-section id="penggunaan-data" number="02" title="Penggunaan data">
+                                <p>
+                                    Kami menggunakan data tersebut untuk membalas pertanyaan, menyiapkan penawaran, dan
+                                    menindaklanjuti komunikasi terkait acara Anda. Kami tidak mengirim promosi tanpa persetujuan
+                                    Anda.
+                                </p>
+                            </x-policy-section>
 
-                            <p class="mt-4 max-w-prose text-body-lg text-charcoal">
-                                Kami menggunakan data tersebut untuk membalas pertanyaan, menyiapkan penawaran, dan
-                                menindaklanjuti komunikasi terkait acara Anda. Kami tidak mengirim promosi tanpa persetujuan
-                                Anda.
-                            </p>
-                        </section>
+                            <x-policy-section id="penyimpanan-dan-akses" number="03" title="Penyimpanan dan akses">
+                                <p>
+                                    Data disimpan di database situs dan hanya dapat diakses oleh tim yang berwenang. Data tidak
+                                    ditampilkan ke publik. Kami menyimpan data selama diperlukan untuk menindaklanjuti permintaan
+                                    dan memenuhi kewajiban administratif.
+                                </p>
+                            </x-policy-section>
 
-                        <section id="penyimpanan-dan-akses" aria-labelledby="judul-penyimpanan-dan-akses"
-                                 class="border-t border-line pt-6">
-                            <div class="flex items-baseline gap-4">
-                                <span class="text-label font-semibold tabular-nums text-charcoal/70" aria-hidden="true">03</span>
-                                <h2 id="judul-penyimpanan-dan-akses" class="font-display text-card-lg font-bold tracking-heading text-navy">
-                                    Penyimpanan dan akses
-                                </h2>
-                            </div>
+                            <x-policy-section id="pihak-ketiga" number="04" title="Pihak ketiga">
+                                <p>
+                                    Kami menggunakan penyedia hosting untuk menjalankan situs. Jika Anda menghubungi kami melalui
+                                    WhatsApp atau email, data juga tunduk pada kebijakan privasi layanan tersebut.
+                                </p>
+                            </x-policy-section>
 
-                            <p class="mt-4 max-w-prose text-body-lg text-charcoal">
-                                Data disimpan di database situs dan hanya dapat diakses oleh tim yang berwenang. Data tidak
-                                ditampilkan ke publik. Kami menyimpan data selama diperlukan untuk menindaklanjuti permintaan
-                                dan memenuhi kewajiban administratif.
-                            </p>
-                        </section>
+                            <aside class="max-w-prose border-l-2 border-navy bg-mist px-6 py-6 sm:ml-16" aria-label="Komitmen kami">
+                                <p class="text-label font-semibold uppercase tracking-label text-charcoal/70">Komitmen kami</p>
+                                <p class="mt-2 font-display text-card-lg font-bold tracking-heading text-navy">
+                                    Kami tidak menjual atau menyewakan data Anda.
+                                </p>
+                            </aside>
 
-                        <section id="pihak-ketiga" aria-labelledby="judul-pihak-ketiga"
-                                 class="border-t border-line pt-6">
-                            <div class="flex items-baseline gap-4">
-                                <span class="text-label font-semibold tabular-nums text-charcoal/70" aria-hidden="true">04</span>
-                                <h2 id="judul-pihak-ketiga" class="font-display text-card-lg font-bold tracking-heading text-navy">
-                                    Pihak ketiga
-                                </h2>
-                            </div>
+                            <x-policy-section id="cookie-dan-analytics" number="05" title="Cookie dan analytics">
+                                <p>
+                                    Situs memakai cookie sesi yang diperlukan agar formulir dan keamanan situs berfungsi. Kami
+                                    tidak memasang cookie iklan. Jika kami menambahkan alat analytics, kami akan memperbarui
+                                    halaman ini dan meminta persetujuan bila diwajibkan.
+                                </p>
+                            </x-policy-section>
 
-                            <p class="mt-4 max-w-prose text-body-lg text-charcoal">
-                                Kami menggunakan penyedia hosting untuk menjalankan situs. Jika Anda menghubungi kami melalui
-                                WhatsApp atau email, data juga tunduk pada kebijakan privasi layanan tersebut. Kami tidak
-                                menjual atau menyewakan data Anda.
-                            </p>
-                        </section>
+                            <x-policy-section id="hak-anda" number="06" title="Hak Anda">
+                                <p>
+                                    Anda dapat meminta akses, koreksi, atau penghapusan data dengan menghubungi kami melalui
+                                    WhatsApp atau email. Kami dapat meminta konfirmasi identitas sebelum memproses permintaan.
+                                </p>
+                            </x-policy-section>
 
-                        <section id="cookie-dan-analytics" aria-labelledby="judul-cookie-dan-analytics"
-                                 class="border-t border-line pt-6">
-                            <div class="flex items-baseline gap-4">
-                                <span class="text-label font-semibold tabular-nums text-charcoal/70" aria-hidden="true">05</span>
-                                <h2 id="judul-cookie-dan-analytics" class="font-display text-card-lg font-bold tracking-heading text-navy">
-                                    Cookie dan analytics
-                                </h2>
-                            </div>
-
-                            <p class="mt-4 max-w-prose text-body-lg text-charcoal">
-                                Situs memakai cookie sesi yang diperlukan agar formulir dan keamanan situs berfungsi. Kami
-                                tidak memasang cookie iklan. Jika kami menambahkan alat analytics, kami akan memperbarui
-                                halaman ini dan meminta persetujuan bila diwajibkan.
-                            </p>
-                        </section>
-
-                        <section id="hak-anda" aria-labelledby="judul-hak-anda"
-                                 class="border-t border-line pt-6">
-                            <div class="flex items-baseline gap-4">
-                                <span class="text-label font-semibold tabular-nums text-charcoal/70" aria-hidden="true">06</span>
-                                <h2 id="judul-hak-anda" class="font-display text-card-lg font-bold tracking-heading text-navy">
-                                    Hak Anda
-                                </h2>
-                            </div>
-
-                            <p class="mt-4 max-w-prose text-body-lg text-charcoal">
-                                Anda dapat meminta akses, koreksi, atau penghapusan data dengan menghubungi kami melalui
-                                WhatsApp atau email. Kami dapat meminta konfirmasi identitas sebelum memproses permintaan.
-                            </p>
-                        </section>
-
-                        <section id="perubahan-kebijakan" aria-labelledby="judul-perubahan-kebijakan"
-                                 class="border-t border-line pt-6">
-                            <div class="flex items-baseline gap-4">
-                                <span class="text-label font-semibold tabular-nums text-charcoal/70" aria-hidden="true">07</span>
-                                <h2 id="judul-perubahan-kebijakan" class="font-display text-card-lg font-bold tracking-heading text-navy">
-                                    Perubahan kebijakan
-                                </h2>
-                            </div>
-
-                            <p class="mt-4 max-w-prose text-body-lg text-charcoal">
-                                Kebijakan ini dapat diperbarui sewaktu-waktu. Tanggal pembaruan terakhir tercantum di bagian
-                                atas halaman.
-                            </p>
-                        </section>
+                            <x-policy-section id="perubahan-kebijakan" number="07" title="Perubahan kebijakan">
+                                <p>
+                                    Kebijakan ini dapat diperbarui sewaktu-waktu. Tanggal pembaruan terakhir tercantum di bagian
+                                    atas halaman.
+                                </p>
+                            </x-policy-section>
+                        </div>
                     </div>
                 </div>
 
@@ -174,37 +141,39 @@
                                 @foreach ($sections as $section)
                                     <li>
                                         <a href="#{{ $section['id'] }}"
-                                           class="flex min-h-11 items-center gap-3 border-b border-line text-small text-charcoal transition-colors duration-150 hover:text-navy">
-                                            <span class="text-label font-semibold tabular-nums text-charcoal/70" aria-hidden="true">{{ $section['number'] }}</span>
-                                            {{ $section['label'] }}
+                                           class="group flex min-h-11 items-center gap-3 border-b border-line text-small text-charcoal transition-colors duration-150 hover:text-navy">
+                                            <span class="w-6 text-label font-semibold tabular-nums text-charcoal/70 transition-colors duration-150 group-hover:text-navy" aria-hidden="true">{{ $section['number'] }}</span>
+                                            <span class="flex-1">{{ $section['label'] }}</span>
+                                            <span class="h-px w-4 bg-line transition-colors duration-150 group-hover:bg-navy" aria-hidden="true"></span>
                                         </a>
                                     </li>
                                 @endforeach
                             </ol>
                         </nav>
 
-                        <div class="mt-10 border-t-2 border-navy pt-6">
-                            <h2 class="font-display text-card-lg font-bold tracking-heading text-navy">Pertanyaan privasi</h2>
-                            <p class="mt-3 max-w-prose text-body text-charcoal">
-                                Hubungi kami jika ada pertanyaan tentang data Anda.
+                        <div class="bg-navy p-6 text-white focus-light lg:mt-10">
+                            <p class="text-label font-semibold uppercase tracking-label text-mist">Pertanyaan privasi</p>
+                            <h2 class="mt-2 font-display text-card-lg font-bold tracking-heading text-white">Hubungi kami</h2>
+                            <p class="mt-3 text-small text-mist">
+                                Kalau ada pertanyaan tentang data Anda, kami siap membantu.
                             </p>
 
-                            <dl class="mt-6 border-t border-line">
-                                <div class="border-b border-line py-4">
-                                    <dt class="text-label font-semibold uppercase tracking-label text-charcoal">WhatsApp</dt>
-                                    <dd class="mt-2">
+                            <dl class="mt-6 border-t border-white/20">
+                                <div class="border-b border-white/20 py-4">
+                                    <dt class="text-label font-semibold uppercase tracking-label text-mist">WhatsApp</dt>
+                                    <dd class="mt-1">
                                         <a href="{{ WhatsApp::link() }}" target="_blank" rel="noopener"
-                                           class="inline-flex min-h-11 items-center break-all text-body font-semibold text-navy underline decoration-navy/30 underline-offset-4 transition-colors duration-150 hover:decoration-navy">
+                                           class="inline-flex min-h-11 items-center break-all text-body font-semibold text-white underline decoration-white/30 underline-offset-4 transition-colors duration-150 hover:decoration-white">
                                             {{ WhatsApp::display() }}
                                         </a>
                                     </dd>
                                 </div>
 
-                                <div class="border-b border-line py-4">
-                                    <dt class="text-label font-semibold uppercase tracking-label text-charcoal">Email</dt>
-                                    <dd class="mt-2">
+                                <div class="border-b border-white/20 py-4">
+                                    <dt class="text-label font-semibold uppercase tracking-label text-mist">Email</dt>
+                                    <dd class="mt-1">
                                         <a href="mailto:{{ config('site.email') }}"
-                                           class="inline-flex min-h-11 items-center break-all text-body font-semibold text-navy underline decoration-navy/30 underline-offset-4 transition-colors duration-150 hover:decoration-navy">
+                                           class="inline-flex min-h-11 items-center break-all text-body font-semibold text-white underline decoration-white/30 underline-offset-4 transition-colors duration-150 hover:decoration-white">
                                             {{ config('site.email') }}
                                         </a>
                                     </dd>
