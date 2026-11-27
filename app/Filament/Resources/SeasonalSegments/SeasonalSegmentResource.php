@@ -21,15 +21,15 @@ class SeasonalSegmentResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCalendarDays;
 
-    protected static ?string $navigationLabel = 'Segmen Musiman';
+    protected static ?string $navigationLabel = 'Musim';
 
     protected static string|UnitEnum|null $navigationGroup = 'Konten';
 
     protected static ?int $navigationSort = 3;
 
-    protected static ?string $modelLabel = 'Segmen musiman';
+    protected static ?string $modelLabel = 'Musim';
 
-    protected static ?string $pluralModelLabel = 'Segmen musiman';
+    protected static ?string $pluralModelLabel = 'Musim';
 
     protected static ?string $recordTitleAttribute = 'name';
 

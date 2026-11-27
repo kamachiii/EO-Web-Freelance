@@ -2,9 +2,12 @@
 
 namespace App\Filament\Resources\SeasonalSegments\Schemas;
 
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 
 class SeasonalSegmentForm
@@ -13,37 +16,78 @@ class SeasonalSegmentForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->label('Nama segmen')
-                    ->required()
-                    ->maxLength(120)
-                    ->helperText('Contoh: Sekolah, Kampus, Perusahaan.'),
-                TextInput::make('label')
-                    ->label('Label musim')
-                    ->required()
-                    ->maxLength(160)
-                    ->helperText('Hanya tampil setelah label disetujui klien.'),
-                TextInput::make('period')
-                    ->label('Periode')
-                    ->required()
-                    ->maxLength(120)
-                    ->helperText('Contoh: Mei–Juli dan September–Oktober.'),
-                Textarea::make('description')
-                    ->label('Deskripsi')
-                    ->rows(4)
+                Section::make('Identitas musim')
+                    ->description('Nama ini dipakai di panel. Label publik hanya tampil setelah disetujui klien.')
+                    ->schema([
+                        TextInput::make('name')
+                            ->label('Nama internal')
+                            ->required()
+                            ->maxLength(120)
+                            ->helperText('Contoh: Ramadan 2027, Study Tour Sekolah, Year-End Gathering.'),
+                        TextInput::make('label')
+                            ->label('Label publik')
+                            ->required()
+                            ->maxLength(160)
+                            ->helperText('Contoh: Musim Study Tour Sekolah. Jangan aktifkan sebelum label disetujui.'),
+                    ])
+                    ->columns(2)
                     ->columnSpanFull(),
-                TextInput::make('sort_order')
-                    ->label('Urutan')
-                    ->numeric()
-                    ->integer()
-                    ->minValue(0)
-                    ->default(0)
-                    ->required(),
-                Toggle::make('is_active')
-                    ->label('Aktif')
-                    ->default(true)
-                    ->helperText('Segmen nonaktif tidak dipakai kampanye musiman.'),
-            ])
-            ->columns(2);
+
+                Section::make('Jadwal musim')
+                    ->description('Pilih rentang tanggal dari kalender. Kalender admin memakai rentang ini untuk menampilkan musim.')
+                    ->schema([
+                        DatePicker::make('starts_at')
+                            ->label('Tanggal mulai')
+                            ->native(false)
+                            ->displayFormat('d M Y')
+                            ->placeholder('Pilih tanggal')
+                            ->weekStartsOnMonday()
+                            ->closeOnDateSelection()
+                            ->helperText('Boleh dikosongkan jika musim sudah berjalan.'),
+                        DatePicker::make('ends_at')
+                            ->label('Tanggal selesai')
+                            ->native(false)
+                            ->displayFormat('d M Y')
+                            ->placeholder('Pilih tanggal')
+                            ->weekStartsOnMonday()
+                            ->closeOnDateSelection()
+                            ->minDate(fn (Get $get): ?string => $get('starts_at'))
+                            ->rules(['after_or_equal:starts_at'])
+                            ->validationMessages([
+                                'after_or_equal' => 'Tanggal selesai tidak boleh sebelum tanggal mulai.',
+                            ])
+                            ->helperText('Boleh dikosongkan jika musim belum punya batas akhir.'),
+                        TextInput::make('period')
+                            ->label('Label periode')
+                            ->maxLength(120)
+                            ->helperText('Kosongkan untuk diisi otomatis dari tanggal, misalnya “08 Feb 2027 – 09 Mar 2027”.'),
+                        TextInput::make('sort_order')
+                            ->label('Urutan')
+                            ->numeric()
+                            ->integer()
+                            ->minValue(0)
+                            ->default(0)
+                            ->required()
+                            ->helperText('Musim dengan urutan lebih kecil tampil lebih dulu.'),
+                    ])
+                    ->columns(2)
+                    ->columnSpanFull(),
+
+                Section::make('Konten dan status')
+                    ->schema([
+                        Textarea::make('description')
+                            ->label('Deskripsi')
+                            ->rows(4)
+                            ->columnSpanFull()
+                            ->helperText('Catatan internal atau ringkasan kampanye. Jangan mengarang promo atau harga.'),
+                        Toggle::make('is_active')
+                            ->label('Aktifkan musim')
+                            ->default(false)
+                            ->extraAttributes(['aria-label' => 'Aktifkan musim'])
+                            ->helperText('Hanya musim aktif yang boleh dipakai di situs publik.'),
+                    ])
+                    ->columns(2)
+                    ->columnSpanFull(),
+            ]);
     }
 }

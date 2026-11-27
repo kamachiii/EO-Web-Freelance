@@ -4,12 +4,20 @@ namespace Tests\Feature;
 
 use App\Filament\Resources\Banners\BannerResource;
 use App\Filament\Resources\Inquiries\InquiryResource;
+use App\Filament\Resources\Packages\PackageResource;
+use App\Filament\Resources\PortfolioItems\PortfolioItemResource;
+use App\Filament\Resources\Posts\PostResource;
 use App\Filament\Resources\SeasonalSegments\SeasonalSegmentResource;
 use App\Filament\Resources\Services\ServiceResource;
+use App\Filament\Resources\Testimonials\TestimonialResource;
 use App\Models\Banner;
 use App\Models\Inquiry;
+use App\Models\Package;
+use App\Models\PortfolioItem;
+use App\Models\Post;
 use App\Models\SeasonalSegment;
 use App\Models\Service;
+use App\Models\Testimonial;
 use App\Models\User;
 use Database\Seeders\AdminUserSeeder;
 use Database\Seeders\DatabaseSeeder;
@@ -53,6 +61,14 @@ class AdminPanelTest extends TestCase
             '/admin/services/create',
             '/admin/seasonal-segments',
             '/admin/seasonal-segments/create',
+            '/admin/portfolio-items',
+            '/admin/portfolio-items/create',
+            '/admin/testimonials',
+            '/admin/testimonials/create',
+            '/admin/packages',
+            '/admin/packages/create',
+            '/admin/posts',
+            '/admin/posts/create',
             '/admin/inquiries',
         ] as $url) {
             $this->get($url)->assertOk();
@@ -68,7 +84,19 @@ class AdminPanelTest extends TestCase
         $this->get(BannerResource::getUrl('edit', ['record' => Banner::firstOrFail()]))->assertOk();
         $this->get(ServiceResource::getUrl('edit', ['record' => Service::firstOrFail()]))->assertOk();
         $this->get(SeasonalSegmentResource::getUrl('edit', ['record' => SeasonalSegment::firstOrFail()]))->assertOk();
+        $this->get(PortfolioItemResource::getUrl('edit', ['record' => PortfolioItem::firstOrFail()]))->assertOk();
+        $this->get(TestimonialResource::getUrl('edit', ['record' => Testimonial::firstOrFail()]))->assertOk();
+        $this->get(PackageResource::getUrl('edit', ['record' => Package::firstOrFail()]))->assertOk();
+        $this->get(PostResource::getUrl('edit', ['record' => Post::firstOrFail()]))->assertOk();
         $this->get(InquiryResource::getUrl('view', ['record' => $inquiry]))->assertOk();
+    }
+
+    public function test_seeded_catalog_placeholders_are_not_published(): void
+    {
+        $this->assertSame(0, PortfolioItem::where('is_active', true)->count());
+        $this->assertSame(0, Testimonial::where('is_active', true)->count());
+        $this->assertSame(0, Package::where('is_active', true)->count());
+        $this->assertSame(0, Post::where('is_published', true)->count());
     }
 
     public function test_inquiry_cannot_be_created_from_admin(): void

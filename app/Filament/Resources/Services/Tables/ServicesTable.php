@@ -41,6 +41,7 @@ class ServicesTable
             ])
             ->defaultSort('sort_order')
             ->reorderable('sort_order')
+            ->stackedOnMobile()
             ->recordActions([
                 EditAction::make(),
             ])

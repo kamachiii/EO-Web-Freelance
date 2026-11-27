@@ -31,6 +31,14 @@
     "file": "assets/montserrat-latin-500-normal-DRFEGfly.woff2",
     "src": "node_modules/@fontsource/montserrat/files/montserrat-latin-500-normal.woff2"
   },
+  "node_modules/@fontsource/montserrat/files/montserrat-latin-600-normal.woff": {
+    "file": "assets/montserrat-latin-600-normal-CdhFl4lI.woff",
+    "src": "node_modules/@fontsource/montserrat/files/montserrat-latin-600-normal.woff"
+  },
+  "node_modules/@fontsource/montserrat/files/montserrat-latin-600-normal.woff2": {
+    "file": "assets/montserrat-latin-600-normal-UVxSCcoG.woff2",
+    "src": "node_modules/@fontsource/montserrat/files/montserrat-latin-600-normal.woff2"
+  },
   "node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff": {
     "file": "assets/montserrat-latin-700-normal-BWkrl476.woff",
     "src": "node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff"
@@ -40,7 +48,7 @@
     "src": "node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BzyiyKhY.css",
+    "file": "assets/app-CDXzk5yf.css",
     "name": "app",
     "names": [
       "app.css"
@@ -56,6 +64,21 @@
       "assets/inter-latin-600-normal-CiBQ2DWP.woff",
       "assets/montserrat-latin-500-normal-DRFEGfly.woff2",
       "assets/montserrat-latin-500-normal-Dok2oTci.woff",
+      "assets/montserrat-latin-700-normal-BdjcYUrC.woff2",
+      "assets/montserrat-latin-700-normal-BWkrl476.woff"
+    ]
+  },
+  "resources/css/filament/admin/theme.css": {
+    "file": "assets/theme-BJp6dZ7F.css",
+    "name": "theme",
+    "names": [
+      "theme.css"
+    ],
+    "src": "resources/css/filament/admin/theme.css",
+    "isEntry": true,
+    "assets": [
+      "assets/montserrat-latin-600-normal-UVxSCcoG.woff2",
+      "assets/montserrat-latin-600-normal-CdhFl4lI.woff",
       "assets/montserrat-latin-700-normal-BdjcYUrC.woff2",
       "assets/montserrat-latin-700-normal-BWkrl476.woff"
     ]

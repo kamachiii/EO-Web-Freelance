@@ -19,6 +19,10 @@ class DatabaseSeeder extends Seeder
             SupportingServiceSeeder::class,
             SeasonalSegmentSeeder::class,
             BannerSeeder::class,
+            PortfolioItemSeeder::class,
+            TestimonialSeeder::class,
+            PackageSeeder::class,
+            PostSeeder::class,
         ]);
     }
 }

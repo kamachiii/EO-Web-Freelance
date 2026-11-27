@@ -50,6 +50,7 @@ class InquiriesTable
             ])
             ->defaultSort('created_at', 'desc')
             ->poll('60s')
+            ->stackedOnMobile()
             ->filters([
                 SelectFilter::make('status')
                     ->label('Status')

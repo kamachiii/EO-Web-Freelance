@@ -58,6 +58,16 @@ return [
             'report' => false,
         ],
 
+        // Foto portofolio dan blog, juga tanpa storage:link.
+        'media' => [
+            'driver' => 'local',
+            'root' => public_path('images/media'),
+            'url' => '/images/media',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\SeasonalSegments\Tables;
 
+use App\Models\SeasonalSegment;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
@@ -16,29 +18,37 @@ class SeasonalSegmentsTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->label('Nama')
-                    ->searchable()
+                    ->label('Musim')
+                    ->description(fn (SeasonalSegment $record): string => $record->label)
+                    ->searchable(['name', 'label'])
                     ->sortable(),
-                TextColumn::make('label')
-                    ->label('Label musim')
-                    ->searchable(),
                 TextColumn::make('period')
-                    ->label('Periode')
-                    ->searchable(),
+                    ->label('Rentang tanggal')
+                    ->state(fn (SeasonalSegment $record): string => $record->periodLabel())
+                    ->icon(Heroicon::OutlinedCalendarDays)
+                    ->color(fn (SeasonalSegment $record): string => $record->dateRangeLabel() ? 'gray' : 'warning')
+                    ->sortable(),
+                TextColumn::make('status_label')
+                    ->label('Status')
+                    ->state(fn (SeasonalSegment $record): string => $record->statusLabel())
+                    ->badge()
+                    ->color(fn (SeasonalSegment $record): string => $record->statusColor()),
                 ToggleColumn::make('is_active')
                     ->label('Aktif'),
                 TextColumn::make('sort_order')
                     ->label('Urutan')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
                     ->label('Diperbarui')
                     ->dateTime('d M Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->defaultSort('sort_order')
+            ->defaultSort('starts_at')
             ->reorderable('sort_order')
+            ->stackedOnMobile()
             ->recordActions([
                 EditAction::make(),
             ])
@@ -46,6 +56,9 @@ class SeasonalSegmentsTable
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->emptyStateHeading('Belum ada musim')
+            ->emptyStateDescription('Tambahkan musim pertama, lalu atur rentang tanggalnya lewat kalender.')
+            ->emptyStateIcon(Heroicon::OutlinedCalendarDays);
     }
 }
