@@ -11,9 +11,14 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
-        // Port tetap supaya tidak bertabrakan dengan dev server proyek lain;
-        // Laravel membaca alamat server dari public/hot.
         port: 5174,
+        cors: true,
+        origin: 'https://mrglobal-event.kamachiii.web.id',
+        hmr: {
+            host: 'mrglobal-event.kamachiii.web.id',
+            protocol: 'wss',
+            clientPort: 443,
+        },
         strictPort: false,
         watch: {
             ignored: ['**/storage/framework/views/**'],
