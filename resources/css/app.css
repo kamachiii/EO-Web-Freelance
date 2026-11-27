@@ -1,0 +1,291 @@
+@import 'tailwindcss';
+
+/* Font lokal: cukup bobot yang dipakai (docs/DESIGN.md bagian 4). */
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-500.css';
+@import '@fontsource/inter/latin-600.css';
+@import '@fontsource/montserrat/latin-500.css';
+@import '@fontsource/montserrat/latin-700.css';
+
+/* Token warna, font, tipografi, dan radius: tailwind.config.js (sumber tunggal). */
+@config '../../tailwind.config.js';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+/*
+ * Gerak (docs/DESIGN.md bagian 8). Dua peran:
+ * 1. hero-rise: urutan baca hero saat halaman dibuka.
+ * 2. media-in: foto hero muncul tanpa menggeser layout.
+ */
+@theme {
+    --animate-hero-rise: hero-rise 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    --animate-media-in: media-in 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+
+    @keyframes hero-rise {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes media-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+@layer base {
+    /* Jangkar tidak tertutup header sticky. */
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 7.5rem;
+    }
+
+    /* Fokus keyboard: cincin 3 px navy dengan jarak 2 px; putih di atas latar navy
+       lewat kelas .focus-light (docs/DESIGN.md bagian 9). */
+    :focus-visible {
+        @apply outline-[3px] outline-offset-2 outline-navy;
+    }
+
+    .focus-light :focus-visible {
+        @apply outline-white;
+    }
+
+    /* Kontrol yang bisa dipakai selalu memakai kursor pointer (R-39).
+       Tailwind preflight mengubah button menjadi cursor: default. */
+    a[href],
+    button:not(:disabled),
+    [role='button']:not([aria-disabled='true']),
+    summary,
+    label[for],
+    select:not(:disabled),
+    input[type='checkbox']:not(:disabled),
+    input[type='radio']:not(:disabled) {
+        cursor: pointer;
+    }
+
+    :disabled,
+    [aria-disabled='true'] {
+        cursor: not-allowed;
+    }
+
+    ::selection {
+        background-color: #e9f0f9;
+        color: #14305b;
+    }
+
+    /* Hormati prefers-reduced-motion (docs/DESIGN.md bagian 8). */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+
+    /* Elemen yang dikendalikan Alpine disembunyikan sampai siap; tanpa JS tetap terlihat. */
+    html.js [x-cloak] {
+        display: none !important;
+    }
+}
+
+/*
+ * Reveal saat masuk viewport. Hanya aktif kalau JavaScript menandai <html class="js">,
+ * jadi tanpa JavaScript semua konten tetap terlihat.
+ */
+@media (prefers-reduced-motion: no-preference) {
+    html.js [data-reveal] {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+            opacity 500ms cubic-bezier(0.22, 1, 0.36, 1),
+            transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    html.js [data-reveal].is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Header sticky: state scroll diatur app.js dengan requestAnimationFrame,
+ * bukan listener Alpine per event scroll.
+ */
+html[data-scrolled='true'] .site-header {
+    box-shadow: 0 10px 30px -18px rgb(20 48 91 / 0.35);
+}
+
+html[data-scrolled='true'] .site-header-inner {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+}
+
+/*
+ * Tombol WhatsApp mengambang: muncul setelah 400 px. Tanpa JavaScript,
+ * tombol tetap terlihat karena state hanya aktif di html.js.
+ */
+.wa-float {
+    transition:
+        opacity 200ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js .wa-float {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+}
+
+html.js[data-scrolled-past='true'] .wa-float {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+html.js[data-wa-hidden='true'] .wa-float {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    pointer-events: none;
+}
+
+/*
+ * Tombol kembali ke atas: pola visibilitas sama dengan tombol WhatsApp,
+ * tetapi tidak ikut disembunyikan saat CTA/footer terlihat.
+ */
+.back-to-top {
+    transition:
+        opacity 200ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js .back-to-top {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+}
+
+html.js[data-scrolled-past='true'] .back-to-top {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Tanpa JavaScript: tombol menu mobile disembunyikan karena tidak bisa berfungsi.
+   Menu tetap terlihat karena x-show tidak diproses. */
+html:not(.js) [data-menu-toggle] {
+    display: none;
+}
+
+/*
+ * Strip audiens berjalan: dua salinan daftar yang sama, digeser setengah
+ * lebar track agar loop mulus. Berhenti saat kursor di atasnya dan menjadi
+ * daftar statis yang membungkus saat pengguna meminta reduced motion.
+ */
+.audience-marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 24px, #000 calc(100% - 24px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 24px, #000 calc(100% - 24px), transparent);
+}
+
+.audience-track {
+    display: flex;
+    width: max-content;
+}
+
+@keyframes audience-marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .audience-track {
+        animation: audience-marquee 34s linear infinite;
+    }
+
+    .audience-marquee:hover .audience-track {
+        animation-play-state: paused;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .audience-marquee {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+    .audience-track {
+        width: 100%;
+    }
+
+    .audience-track > [aria-hidden='true'] {
+        display: none;
+    }
+
+    .audience-track > ul {
+        width: 100%;
+        flex-wrap: wrap;
+        padding-right: 0;
+        row-gap: 0.5rem;
+    }
+}
+
+/*
+ * Cover desktop di layar pendek: kurangi padding vertikal agar cover kontak
+ * yang punya kartu kontak tetap muat satu layar.
+ */
+@media (min-width: 64rem) and (max-height: 38rem) {
+    .page-cover-content {
+        padding-block: 2rem;
+    }
+}
+
+/*
+ * Cover di layar pendek (ponsel lanskap): rapatkan padding dan jarak agar
+ * band halaman tetap terlihat tanpa mengubah cover di layar normal.
+ */
+@media (max-height: 30rem) {
+    .page-cover-content {
+        padding-block: 1rem;
+    }
+
+    .page-cover-content > .grid {
+        gap: 1rem;
+    }
+
+    /* Di ponsel lanskap, info kontak tambahan sudah ada di header dan isi halaman. */
+    .page-cover-aside {
+        display: none;
+    }
+}
+
+/*
+ * Cover kontak di layar sempit dan pendek: tampilkan WhatsApp saja agar cover
+ * tetap satu layar. Email tetap tersedia di daftar "Hubungi kami" dan footer.
+ */
+@media (max-height: 41rem) and (max-width: 1023px) {
+    .page-cover-email {
+        display: none;
+    }
+}
