@@ -116,7 +116,7 @@ Rancangan sorotan musim ada di `SEASONAL.md`. Ringkasnya: audiens (sekolah, kamp
 
 - **WhatsApp:** +62 8577-123-9861, URL: `https://wa.me/6285771239861` (boleh diberi parameter `?text=` berisi pesan awal)
 - **Email:** mrayaglobal@gmail.com (perlu konfirmasi, lihat bagian 2)
-- **Basecamp:** Bogor / Jakarta (alamat lengkap belum ada)
+- **Basecamp:** Bogor (alamat lengkap belum ada)
 - **Area layanan:** basis operasional Bogor & Puncak; jangkauan rutin Jabodetabek, Sukabumi, dan Bandung; skala nasional seluruh Indonesia
 
 ### Layanan utama (satu slug per layanan, bisa diatur di admin)

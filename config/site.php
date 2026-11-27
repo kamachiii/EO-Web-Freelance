@@ -23,8 +23,8 @@ return [
     // TODO(developer): konfirmasikan ejaan email ke klien (docs/AGENTS.md bagian 2).
     'email' => 'mrayaglobal@gmail.com',
 
-    // Alamat lengkap basecamp belum ada dari klien; hanya kota yang boleh ditampilkan.
-    'basecamp' => 'Bogor / Jakarta',
+    // Basecamp di Bogor; alamat lengkap belum ada dari klien.
+    'basecamp' => 'Bogor',
 
     'service_areas' => [
         'Bogor',

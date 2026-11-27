@@ -101,7 +101,7 @@ Ringkasan pendek untuk daftar layanan (versi desain):
 
 - **WhatsApp Business:** +62 8577-123-9861 (link: `https://wa.me/6285771239861`)
 - **Email:** mrayaglobal@gmail.com
-- **Alamat basecamp:** Bogor / Jakarta, Indonesia (alamat lengkap **[BELUM ADA]**)
+- **Alamat basecamp:** Bogor, Indonesia (alamat lengkap **[BELUM ADA]**)
 - **Area layanan:** basis operasional Bogor & Puncak; jangkauan rutin Jabodetabek, Sukabumi, dan Bandung; skala nasional seluruh Indonesia.
 - Instagram dan sosmed lain, jam operasional: **[BELUM ADA]**
 

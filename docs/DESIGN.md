@@ -213,8 +213,8 @@ Layanan tidak ditampilkan sebagai kartu seragam. Gunakan katalog bernomor:
 ### Form inquiry
 
 - Label di atas kolom, teks kecil semibold navy.
-- Kolom putih, border 1 px `charcoal/60`, radius 0–10 px. Fokus memakai ring global.
-- Error: border navy 2 px + teks error di bawah kolom. Jangan hanya warna.
+- Kolom putih, border 1 px `navy/60` (kontras minimal 3:1), radius 4 px, teks `navy`, placeholder `charcoal/60`. Fokus memakai ring global dan border navy penuh.
+- Error: border navy + ring 2 px `navy/15` + teks error di bawah kolom. Jangan hanya warna.
 - Ringkasan error di atas form, dapat difokuskan.
 - Setelah sukses: form diganti panel konfirmasi. Jangan biarkan form kosong terbuka.
 - Urutan mobile: form lebih dulu, info kontak setelahnya.
@@ -227,7 +227,7 @@ Layanan tidak ditampilkan sebagai kartu seragam. Gunakan katalog bernomor:
 - Tiga blok di grid: halaman, kontak, dan area layanan. Di 1024 px ke atas ketiganya sama lebar; pada 640–1023 px halaman dan kontak menjadi dua kolom dan area layanan selebar penuh; di mobile bertumpuk dengan urutan yang sama.
 - Ketiga blok memakai garis rambut selebar kolom dan ritme baris yang konsisten. Blok halaman berupa baris tautan; kontak memakai label-nilai sejajar pada 640 px ke atas; area layanan memakai label di atas nilai pada 1024 px ke atas agar nilai panjang tidak terpotong.
 - Area layanan ditampilkan bertingkat: basis operasional, jangkauan rutin, skala nasional. Jangan menulis daftar datar yang saling tumpang tindih.
-- Baris bawah: copyright dan satu kalimat target audiens. Baris bawah baru menjadi satu baris di 1024 px ke atas; di bawah itu keduanya bertumpuk.
+- Baris bawah: copyright (4 kolom), tautan Kebijakan Privasi (2 kolom), dan satu kalimat target audiens (6 kolom, rata kanan) pada 1024 px ke atas. Di bawah itu ketiganya bertumpuk. Tautan privasi memakai tinggi 44 px dan garis bawah tipis.
 - Kredit foto stok tidak ditampilkan ke pengunjung; catat di `docs/IMAGE-CREDITS.md` dan komentar HTML.
 
 ### Tombol WhatsApp mengambang
@@ -333,6 +333,13 @@ Aturan:
 - Info kontak berupa daftar berlabel, tanpa lingkaran ikon.
 - Form dengan ringkasan error, preselection layanan, dan panel sukses.
 - Tanpa peta sampai alamat lengkap dikonfirmasi.
+
+### Kebijakan privasi
+
+- Header band `mist`: eyebrow "Privasi", H1 `text-chapter`, paragraf pembuka, dan tanggal pembaruan di kolom kanan.
+- Konten 7 kolom; aside 4 kolom mulai kolom 9, sticky di desktop, berisi daftar isi bernomor dan blok kontak.
+- Setiap bagian memakai garis atas `line`, nomor dua digit, dan H2 `text-card-lg`. Tanpa heading raksasa.
+- Di mobile aside turun setelah konten; daftar isi desktop disembunyikan.
 
 ### 404 dan 429
 

@@ -190,7 +190,7 @@ Sudah pasti dan tidak perlu dikonfirmasi ulang:
 - Nama brand: MR Global Events & Solutions.
 - Headline: Push Your Limits, Build Your Team.
 - WhatsApp utama: +62 8577-123-9861.
-- Basecamp: Bogor / Jakarta (kota saja; alamat lengkap masih perlu).
+- Basecamp: Bogor (alamat lengkap masih perlu).
 - Tujuh layanan utama dan slug-nya.
 - Tiga pilar: Personnel, Program, Prices.
 - Visi dan misi yang sudah ada di `CONTENT.md`.

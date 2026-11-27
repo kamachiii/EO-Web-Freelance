@@ -1,5 +1,12 @@
 @use('App\Support\WhatsApp')
 
+@php
+    // Kolom form memakai garis navy tipis, teks navy, dan fokus global yang sudah ada.
+    $fieldBase = 'w-full rounded-[4px] border bg-white px-4 text-body text-navy transition-colors duration-150 placeholder:text-charcoal/60 hover:border-navy/80 focus:border-navy';
+    $fieldBorder = 'border-navy/60';
+    $fieldError = 'border-navy ring-2 ring-navy/15';
+@endphp
+
 <x-layout :title="$seo['title']" :description="$seo['description']">
     <x-page-cover eyebrow="Kontak"
                   title="Kontak"
@@ -124,7 +131,7 @@
                                 <label for="name" class="block text-small font-semibold text-navy">Nama <span aria-hidden="true">*</span><span class="sr-only">(wajib)</span></label>
                                 <input id="name" name="name" type="text" required autocomplete="name" value="{{ old('name') }}"
                                        @if ($errors->has('name')) aria-invalid="true" aria-describedby="name-error" @endif
-                                       class="mt-2 h-12 w-full rounded-[6px] border bg-white px-4 text-body text-charcoal {{ $errors->has('name') ? 'border-2 border-navy' : 'border-charcoal/60' }}">
+                                       class="mt-2 h-12 {{ $fieldBase }} {{ $errors->has('name') ? $fieldError : $fieldBorder }}">
                                 @if ($errors->has('name'))
                                     <p id="name-error" class="mt-2 text-small font-semibold text-navy" role="alert">{{ $errors->first('name') }}</p>
                                 @endif
@@ -135,7 +142,7 @@
                                 <input id="whatsapp" name="whatsapp" type="tel" required inputmode="tel" autocomplete="tel" value="{{ old('whatsapp') }}"
                                        aria-describedby="whatsapp-hint{{ $errors->has('whatsapp') ? ' whatsapp-error' : '' }}"
                                        @if ($errors->has('whatsapp')) aria-invalid="true" @endif
-                                       class="mt-2 h-12 w-full rounded-[6px] border bg-white px-4 text-body text-charcoal {{ $errors->has('whatsapp') ? 'border-2 border-navy' : 'border-charcoal/60' }}">
+                                       class="mt-2 h-12 {{ $fieldBase }} {{ $errors->has('whatsapp') ? $fieldError : $fieldBorder }}">
                                 @if ($errors->has('whatsapp'))
                                     <p id="whatsapp-error" class="mt-2 text-small font-semibold text-navy" role="alert">{{ $errors->first('whatsapp') }}</p>
                                 @else
@@ -144,21 +151,21 @@
                             </div>
 
                             <div>
-                                <label for="email" class="block text-small font-semibold text-navy">Email <span class="font-normal text-charcoal">(opsional)</span></label>
+                                <label for="email" class="block text-small font-semibold text-navy">Email <span class="font-normal text-charcoal/70">(opsional)</span></label>
                                 <input id="email" name="email" type="email" autocomplete="email" value="{{ old('email') }}"
                                        @if ($errors->has('email')) aria-invalid="true" aria-describedby="email-error" @endif
-                                       class="mt-2 h-12 w-full rounded-[6px] border bg-white px-4 text-body text-charcoal {{ $errors->has('email') ? 'border-2 border-navy' : 'border-charcoal/60' }}">
+                                       class="mt-2 h-12 {{ $fieldBase }} {{ $errors->has('email') ? $fieldError : $fieldBorder }}">
                                 @if ($errors->has('email'))
                                     <p id="email-error" class="mt-2 text-small font-semibold text-navy" role="alert">{{ $errors->first('email') }}</p>
                                 @endif
                             </div>
 
                             <div>
-                                <label for="service_id" class="block text-small font-semibold text-navy">Layanan yang diminati <span class="font-normal text-charcoal">(opsional)</span></label>
+                                <label for="service_id" class="block text-small font-semibold text-navy">Layanan yang diminati <span class="font-normal text-charcoal/70">(opsional)</span></label>
                                 <div class="relative mt-2">
                                     <select id="service_id" name="service_id"
                                             @if ($errors->has('service_id')) aria-invalid="true" aria-describedby="service_id-error" @endif
-                                            class="h-12 w-full appearance-none rounded-[6px] border bg-white px-4 pr-10 text-body text-charcoal {{ $errors->has('service_id') ? 'border-2 border-navy' : 'border-charcoal/60' }}">
+                                            class="h-12 appearance-none pr-10 {{ $fieldBase }} {{ $errors->has('service_id') ? $fieldError : $fieldBorder }}">
                                         <option value="">Pilih layanan</option>
                                         @foreach ($services as $service)
                                             <option value="{{ $service->id }}" @selected((string) old('service_id', $selectedServiceId) === (string) $service->id)>
@@ -166,7 +173,7 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                    <x-icon name="chevron-down" class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal" />
+                                    <x-icon name="chevron-down" class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-navy" />
                                 </div>
                                 @if ($errors->has('service_id'))
                                     <p id="service_id-error" class="mt-2 text-small font-semibold text-navy" role="alert">{{ $errors->first('service_id') }}</p>
@@ -178,7 +185,7 @@
                                 <textarea id="message" name="message" rows="3" required
                                           aria-describedby="message-hint{{ $errors->has('message') ? ' message-error' : '' }}"
                                           @if ($errors->has('message')) aria-invalid="true" @endif
-                                          class="mt-2 w-full resize-y rounded-[6px] border bg-white px-4 py-3 text-body text-charcoal {{ $errors->has('message') ? 'border-2 border-navy' : 'border-charcoal/60' }}">{{ old('message') }}</textarea>
+                                          class="mt-2 resize-y py-3 {{ $fieldBase }} {{ $errors->has('message') ? $fieldError : $fieldBorder }}">{{ old('message') }}</textarea>
                                 @if ($errors->has('message'))
                                     <p id="message-error" class="mt-2 text-small font-semibold text-navy" role="alert">{{ $errors->first('message') }}</p>
                                 @else
